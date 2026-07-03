@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Recuerdo en Pétalos</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <section id="intro-screen">
+        <div class="tulip-container">
+            <div class="bouquet">
+                <div class="bouquet-wrap-back"></div>
+
+                <div class="single-flower tulip t1"><div class="stem"></div><div class="th"><div class="p b"></div><div class="p l"></div><div class="p r"></div><div class="p c"></div></div></div>
+                <div class="single-flower tulip t2"><div class="stem"></div><div class="th"><div class="p b"></div><div class="p l"></div><div class="p r"></div><div class="p c"></div></div></div>
+                <div class="single-flower tulip t3"><div class="stem"></div><div class="th"><div class="p b"></div><div class="p l"></div><div class="p r"></div><div class="p c"></div></div></div>
+
+                <div class="single-flower rose-pink r-center"><div class="stem"></div><div class="rh"><div class="rp rp-b"></div><div class="rp rp-l"></div><div class="rp rp-r"></div><div class="rp rp-c"></div></div></div>
+
+                <div class="bouquet-wrap-front">
+                    <div class="bouquet-ribbon"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="date-trigger-container">
+            <button class="date-btn" id="open-letter-btn">
+                VER CARTA
+                <span class="year">2026</span>
+            </button>
+            <div class="click-hint">Haz clic para abrir</div>
+        </div>
+    </section>
+
+    <section id="letter-screen">
+        <div class="envelope-wrapper" id="envelope">
+            <div class="envelope">
+                <div class="flap"></div>
+                <div class="pocket"></div>
+                
+                <div class="envelope-seal">
+                    <div class="heart-icon"></div>
+                    <span>Toca para abrir</span>
+                </div>
+                
+                <div class="letter-card">
+                    <button class="close-letter-btn" id="close-letter-trigger">✕ Cerrar y Guardar</button>
+
+                    <div class="letter-content-scroll" id="pages-container">
+                        </div>
+
+                    <div class="letter-navigation">
+                        <button class="nav-page-btn" id="prev-page-trigger" style="display: none;">
+                            ⬅ Atrás
+                        </button>
+                        <button class="nav-page-btn" id="next-page-trigger">
+                            Siguiente página ➔
+                        </button>
+                    </div>
+                </div> </div> <div class="sparkle sp-1">✦</div>
+            <div class="sparkle sp-2">✦</div>
+            <div class="sparkle sp-3">✦</div>
+
+        </div> </section>
+    <script src="script.js"></script>
+</body>
+</html>
