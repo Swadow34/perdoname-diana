@@ -39,14 +39,13 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column; /* Coloca el ramo arriba y el botón abajo */
-    justify-content: center; /* Centrado vertical absoluto */
-    align-items: center;     /* Centrado horizontal absoluto */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;     
     z-index: 10;
     transition: opacity 1s ease;
 }
 
-/* Asegura que los pétalos de la explosión vuelen por encima del sobre */
 .burst-petal {
     z-index: 9999 !important;
 }
@@ -85,10 +84,8 @@ body {
     left: var(--left-pos, 50%) !important;
     width: 0px; 
     height: 100%;
-    /* Aseguramos que el origen de la rotación sea abajo al centro para que oscile como un péndulo invertido */
     transform-origin: bottom center !important;
     display: block !important;
-    /* Forzamos que la animación se ejecute sin interferencias */
     animation: swayMassiveRamo 5s ease-in-out infinite alternate !important;
     animation-delay: var(--delay, 0s) !important;
 }
@@ -111,34 +108,31 @@ body {
     height: 100px;
 }
 
-/* Pétalos de Tulipán Naranja */
 .th .p { position: absolute; bottom: 0; border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%; transform-origin: bottom center; }
 .th .p.b { width: 65px; height: 95px; left: 10px; background: linear-gradient(to top, #e65c00, #ff8c1a); transform: scale(0.6); animation: bloomCenter 3s forwards; }
 .th .p.l { width: 55px; height: 90px; left: 3px; background: linear-gradient(135deg, #ff7300, #ff9e42); transform: rotate(-15deg) scale(0.5); animation: bloomLeft 3s forwards; }
 .th .p.r { width: 55px; height: 90px; right: 3px; background: linear-gradient(-135deg, #ff7300, #ff9e42); transform: rotate(15deg) scale(0.5); animation: bloomRight 3s forwards; }
 .th .p.c { width: 60px; height: 93px; left: 12px; background: linear-gradient(to top, #ff6200, #ffa34d); transform: scaleY(0.4); animation: bloomFront 2.8s forwards; box-shadow: inset 0 -10px 20px rgba(0,0,0,0.05); }
 
-/* Pétalos de la Rosa Rosa Central */
 .rose-pink .rh .rp { position: absolute; bottom: 0; border-radius: 50%; transform-origin: bottom center; }
 .rose-pink .rh .rp-b { width: 70px; height: 75px; left: 7px; background: #d946ef; transform: scale(0.5); animation: bloomCenter 2.5s forwards; } 
 .rose-pink .rh .rp-l { width: 60px; height: 70px; left: 2px; background: #f06292; transform: rotate(-22deg) scale(0.5); animation: bloomLeft 2.8s forwards; }
 .rose-pink .rh .rp-r { width: 60px; height: 70px; right: 2px; background: #f06292; transform: rotate(22deg) scale(0.5); animation: bloomRight 2.8s forwards; }
 .rose-pink .rh .rp-c { width: 54px; height: 66px; left: 15px; background: linear-gradient(to top, #f472b6, #fce7f3); z-index: 5; transform: scaleY(0.4); animation: bloomFront 2.3s forwards; } 
 
-
 /* ==========================================================================
    4. DISTRIBUCIÓN CALIBRADA Y JUNTITA (3 TULIPANES + 1 ROSA ROSA)
    ========================================================================== */
-.t1  { --rot: -12deg; --stem-h: 245px; --left-pos: 45%;  --delay: 0.1s; z-index: 11; } /* Izquierda */
-.t2  { --rot: 0deg;   --stem-h: 270px; --left-pos: 50%;  --delay: 0.3s; z-index: 10; } /* Centro trasero */
-.t3  { --rot: 12deg;  --stem-h: 245px; --left-pos: 55%;  --delay: 0.2s; z-index: 11; } /* Derecha */
+.t1  { --rot: -12deg; --stem-h: 245px; --left-pos: 45%;  --delay: 0.1s; z-index: 11; }
+.t2  { --rot: 0deg;   --stem-h: 270px; --left-pos: 50%;  --delay: 0.3s; z-index: 10; }
+.t3  { --rot: 12deg;  --stem-h: 245px; --left-pos: 55%;  --delay: 0.2s; z-index: 11; } 
 
 .r-center { 
     --rot: 0deg; 
-    --stem-h: 215px; /* Altura perfecta: queda abrazada abajo del tulipán central */
+    --stem-h: 215px; 
     --left-pos: 50%; 
     --delay: 0.4s; 
-    z-index: 25; /* Al frente para cubrir los tallos */
+    z-index: 25; 
 } 
 .r-center .stem { 
     background: #354a2b; 
@@ -159,7 +153,6 @@ body {
     border-radius: 35px 35px 20px 20px;
     z-index: 5;
     opacity: 0.9;
-    /* Animación sutil de fondo */
     transform-origin: bottom center;
     animation: swayPaperBack 5s ease-in-out infinite alternate;
 }
@@ -168,7 +161,6 @@ body {
     position: absolute;
     bottom: 0;
     left: 50%;
-    /* Unimos el centrado con la misma animación de balanceo de las flores */
     transform-origin: bottom center !important;
     width: 210px; 
     height: 215px; 
@@ -180,7 +172,6 @@ body {
     animation: swayPaperFront 5s ease-in-out infinite alternate;
 }
 
-/* El moño o listón centrado */
 .bouquet-ribbon {
     position: absolute;
     bottom: 30px;
@@ -191,12 +182,10 @@ body {
     border-radius: 4px;
     z-index: 60;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    /* Transformación base combinada con animación de rebote tierno */
     transform-origin: center;
     animation: bounceRibbon 2.5s ease-in-out infinite alternate;
 }
 
-/* Orejas del moño */
 .bouquet-ribbon::before,
 .bouquet-ribbon::after {
     content: '';
@@ -216,10 +205,9 @@ body {
     position: absolute;
     bottom: 40px;
     right: 50px;
-    z-index: 100; /* Aseguramos que esté por encima de cualquier pétalo o fondo */
+    z-index: 100; 
     opacity: 0;
     transform: translateY(20px);
-    /* Se muestra sutilmente después de 4 segundos, cuando las flores terminan de abrirse */
     animation: fadeInUp 1.5s ease-out 4s forwards;
     display: flex;
     flex-direction: column;
@@ -231,7 +219,7 @@ body {
     border: none;
     cursor: pointer;
     outline: none;
-    font-family: 'Cinzel', serif; /* Si no usas esta fuente, cambiar por 'Plus Jakarta Sans' o 'Lora' */
+    font-family: 'Cinzel', serif;
     color: #4a5568;
     font-size: 1.25rem;
     letter-spacing: 3px;
@@ -243,13 +231,12 @@ body {
 
 .date-btn span.year {
     font-size: 0.85rem;
-    color: #e11d48; /* Cambiado a rosa/rojo para combinar con el moño del ramo */
+    color: #e11d48;
     font-weight: 600;
     margin-top: 5px;
     letter-spacing: 5px;
 }
 
-/* Línea animada decorativa debajo del botón */
 .date-btn::after {
     content: '';
     width: 0%;
@@ -259,7 +246,6 @@ body {
     margin-top: 6px;
 }
 
-/* Efecto Hover */
 .date-btn:hover {
     color: #1a202c;
     transform: translateY(-3px);
@@ -277,7 +263,7 @@ body {
     color: #a0aec0;
     margin-top: 8px;
     animation: pulseHint 2s infinite alternate;
-    pointer-events: none; /* Evita que interfiera con el clic del botón */
+    pointer-events: none;
 }
 
 /* ==========================================================================
@@ -292,23 +278,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    /* Regresamos a la normalidad: oculto al inicio */
     opacity: 0;
     pointer-events: none;
-    
     background-color: #f7f9fc;
-    z-index: 5; /* Por debajo de la intro para que se vea el ramo primero */
+    z-index: 5; 
     transition: opacity 1.2s ease;
 }
 
-/* Se activa únicamente cuando el JS da la orden al clickear "VER CARTA" */
 #letter-screen.active {
     opacity: 1;
     pointer-events: auto;
 }
 
-/* Contenedor del Sobre */
 .envelope-wrapper {
     position: relative;
     width: 700px; 
@@ -321,89 +302,67 @@ body {
    RED DISEÑO DEL SOBRE: SOLAPAS CURVAS Y VOLUMEN (PUNTO 2)
    ========================================================================== */
 
-/* Solapa superior del sobre (Ahora redondeada) */
 .flap {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 240px;
-    background-color: #fce7f3; /* Rosa claro para el interior expuesto */
-    
-    /* El truco de la curva: recortamos el div para que termine en una punta redondeada elegante */
+    background-color: #fce7f3; 
     clip-path: path('M 0 0 L 700 0 L 700 40 Q 350 240 0 40 Z');
-    
     transform-origin: top;
     transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
     z-index: 4;
-    
-    /* Sombra sutil para dar volumen a la caída */
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
 }
 
-/* Bolsillo frontal del sobre (Curvas cruzadas elegantes) */
 .pocket {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 300px;
-    background-color: #fbcfe8; /* Color medio del sobre */
+    background-color: #fbcfe8;
     border-radius: 0 0 15px 15px;
-    
-    /* Recorte estilizado: genera una forma de "U" o curvas suaves tipo sobre de boutique */
     clip-path: path('M 0 300 L 700 300 L 700 80 Q 550 180 350 180 Q 150 180 0 80 Z');
-    
     z-index: 3;
     transition: 
         opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
         transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Ajuste al contenedor del fondo del sobre para que no pierda color base */
 .envelope {
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: #f9a8d4; /* Color de fondo interno más oscuro para dar contraste */
+    background-color: #f9a8d4;
     border-radius: 0 0 15px 15px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
     transition: all 0.5s ease;
 }
 
-/* Tarjeta de la Carta */
-/* Tarjeta de la Carta con textura de papel y relieve */
 .letter-card {
     position: absolute;
-    /* Fondo color marfil/crema base */
     background-color: #fffef9; 
-    
-    /* EFECTO HOJA DE CUADERNO: Líneas sutiles horizontales */
     background-image: repeating-linear-gradient(
         #fffef9 0px, 
         #fffef9 31px, 
         #e5e7eb 32px
     );
-    
     width: 90%;
     height: 85%;
     top: 10%;
     left: 5%;
     border-radius: 12px;
-    
-    /* Sombra exterior suave + Sombra interna que simula el doblez/relieve del papel */
     box-shadow: 
         0 10px 30px rgba(0, 0, 0, 0.06),
         inset 0 0 40px rgba(240, 230, 210, 0.5); 
-        
     z-index: 1;
-    padding: 45px 50px; /* Un poco más de espacio para los márgenes */
+    padding: 45px 50px;
     box-sizing: border-box;
     opacity: 0;
     pointer-events: none;
     transform: translateY(40px); 
-    
-    /* Mantenemos tu transición ultra suave de 2.2s */
     transition: 
         transform 2.2s cubic-bezier(0.25, 1, 0.3, 1), 
         opacity 1.8s ease-out, 
@@ -412,12 +371,11 @@ body {
         left 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Contenedor del Scroll */
 .letter-content-scroll {
     position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Cambiado a hidden porque el scroll lo manejará cada página individualmente */
+    overflow: hidden; 
     box-sizing: border-box;
 }
 
@@ -430,7 +388,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow-y: auto; /* El scroll ahora vive dentro de la página visible */
+    overflow-y: auto; 
     padding-right: 10px;
     box-sizing: border-box;
     opacity: 0;
@@ -439,14 +397,12 @@ body {
     transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Cuando la página está activa se revela e interactúa */
 .letter-page.active {
     opacity: 1;
     pointer-events: auto;
     transform: translateX(0);
 }
 
-/* Fina barra de scroll personalizada */
 .letter-page::-webkit-scrollbar {
     width: 6px;
 }
@@ -455,20 +411,17 @@ body {
     border-radius: 10px;
 }
 
-/* Estilos de Texto */
-/* Ajuste de los textos para que encajen en los renglones */
 .letter-title {
     font-family: 'Lora', serif;
     font-size: 2.2rem;
     color: #1a1a1a;
-    margin-bottom: 38px; /* Separación calibrada */
+    margin-bottom: 38px; 
     line-height: 1;
 }
 
 .letter-body {
     font-family: 'Lora', serif;
     font-size: 1.15rem;
-    /* Altura de línea idéntica al patrón del fondo para calzar en las rayas */
     line-height: 32px; 
     color: #3f3f46;
     white-space: pre-line; 
@@ -480,7 +433,6 @@ body {
     color: #1a1a1a;
 }
 
-/* SELLO CENTRAL "TOCA PARA ABRIR" */
 .envelope-seal {
     position: absolute;
     top: 45%;
@@ -531,7 +483,6 @@ body {
 .heart-icon::before { top: -12px; left: 0; }
 .heart-icon::after { top: 0; left: 12px; }
 
-/* BOTÓN DE SALTO DE HOJA */
 .next-page-btn {
     position: absolute;
     bottom: 20px;
@@ -558,11 +509,8 @@ body {
     transform: translateX(4px);
 }
 
-/* ==========================================================================
-   ESTADOS DE APERTURA 
-   ========================================================================== */
 .envelope-wrapper.open .flap {
-    transform: rotateX(150deg); /* Menos inclinación para que no haga un extraño al bajar */
+    transform: rotateX(150deg); 
     opacity: 0; 
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease 0.2s;
 }
@@ -623,25 +571,21 @@ body {
     animation: burst 1.8s ease-out forwards;
 }
 
-/* Balanceo orgánico para cada flor respetando su ángulo base (--rot) */
 @keyframes swayMassiveRamo {
     0% { transform: rotate(calc(var(--rot) - 3.5deg)) scale(1); }
     100% { transform: rotate(calc(var(--rot) + 3.5deg)) scale(1.02); }
 }
 
-/* Balanceo sutil para el papel de adelante, sincronizado al mismo tiempo (5s) */
 @keyframes swayPaperFront {
     0% { transform: translateX(-50%) rotate(-1.5deg); }
     100% { transform: translateX(-50%) rotate(1.5deg); }
 }
 
-/* Balanceo para el papel de atrás */
 @keyframes swayPaperBack {
     0% { transform: translateX(-50%) rotate(-1deg); }
     100% { transform: translateX(-50%) rotate(1deg); }
 }
 
-/* Latido/Rebote tierno para el moño rojo */
 @keyframes bounceRibbon {
     0% { transform: translateX(-50%) scale(1); }
     100% { transform: translateX(-50%) scale(1.08) translateY(-1px); }
@@ -669,7 +613,6 @@ body {
     0% { opacity: 0.4; transform: scale(0.98); }
     100% { opacity: 0.9; transform: scale(1); }
 }
-/* Botón para Guardar y Cerrar la carta en el sobre */
 .close-letter-btn {
     position: absolute;
     top: 15px;
@@ -687,7 +630,7 @@ body {
 }
 
 .close-letter-btn:hover {
-    color: #e11d48; /* Cambia a tono rosa/rojo al pasar el mouse */
+    color: #e11d48; 
 }
 
 /* ==========================================================================
@@ -696,7 +639,7 @@ body {
 
 .sparkle {
     position: absolute;
-    color: #fbbf24; /* Dorado brillante */
+    color: #fbbf24; 
     font-size: 1.2rem;
     pointer-events: none;
     opacity: 0;
@@ -704,17 +647,14 @@ body {
     animation: floatSparkle 3s infinite ease-in-out;
 }
 
-/* Posiciones estratégicas alrededor del sobre */
 .sp-1 { top: -20px; left: 15%; animation-delay: 0s; }
 .sp-2 { bottom: 40px; right: -10px; font-size: 1.5rem; animation-delay: 1s; }
 .sp-3 { top: 50%; left: -25px; font-size: 0.9rem; animation-delay: 1.8s; }
 
-/* Ocultar destellos cuando la carta esté abierta para no estorbar la lectura */
 .envelope-wrapper.open .sparkle {
     display: none;
 }
 
-/* Animación de flotado y parpadeo */
 @keyframes floatSparkle {
     0% {
         transform: translateY(0) scale(0.8);
@@ -762,13 +702,12 @@ body {
    8. DISEÑO RESPONSIVO PARA PANTALLAS MÓVILES (CALIBRACIÓN DE TAMAÑOS)
    ========================================================================== */
 @media (max-width: 600px) {
-    /* Ramo inicial: Regresa a un tamaño grande y vistoso, bien centrado */
     .tulip-container, .bouquet {
         position: relative !important;
         left: 0 !important;
         right: 0 !important;
         margin: 0 auto !important;
-        transform: scale(0.9) !important; /* Más grande para que destaque */
+        transform: scale(0.9) !important; 
     }
 
     .date-trigger-container {
@@ -783,13 +722,11 @@ body {
         padding: 12px 24px;
     }
 
-    /* Redimensionar el sobre en móvil */
     .envelope-wrapper {
         width: 340px !important;
         height: 240px !important;
     }
 
-    /* Solapas del sobre adaptadas */
     .flap {
         height: 160px;
         clip-path: path('M 0 0 L 340 0 L 340 30 Q 170 160 0 30 Z');
@@ -804,33 +741,26 @@ body {
         clip-path: path('M 0 180 L 340 180 L 340 50 Q 260 110 170 110 Q 80 110 0 50 Z');
     }
 
-    /* CORRECCIÓN: Carta con tamaño fijo en píxeles para que se vea grande y espaciosa */
-/* CORRECCIÓN: Carta ampliada para ocupar la pantalla móvil */
     .letter-card {
-        width: 380px !important;  /* Más ancha (ocupa casi todo el ancho disponible) */
-        height: 680px !important; /* Más alta para dar espacio a textos largos */
-        top: -140px !important;   /* La subimos más para centrarla por su nuevo tamaño */
-        left: -20px !important;    /* Ajuste de centrado horizontal */
+        width: 380px !important;  
+        height: 680px !important; 
+        top: -140px !important;   
+        left: -20px !important;    
         
-        /* Padding optimizado */
         padding: 40px 22px 65px 22px !important; 
         box-sizing: border-box !important;
         
-        /* Líneas de renglones espaciadas a 32px */
         background-image: repeating-linear-gradient(#fffef9 0px, #fffef9 31px, #e5e7eb 32px) !important;
         
-        /* Sombra un poco más profunda para que resalte del fondo */
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
     }
 
-    /* Contenedor con scroll para los textos largos */
     .letter-content-scroll {
         height: 100% !important;
         overflow-y: auto !important;
         padding-bottom: 10px;
     }
 
-    /* Textos con tamaño de lectura óptimo */
     .letter-title {
         font-size: 1.4rem !important;
         margin-bottom: 25px !important;
@@ -839,7 +769,7 @@ body {
 
     .letter-body {
         font-size: 1rem !important;
-        line-height: 32px !important; /* Calza excelente con el nuevo renglón */
+        line-height: 32px !important; 
     }
     
     .close-letter-btn {
@@ -848,7 +778,6 @@ body {
         font-size: 0.8rem !important;
     }
 
-    /* Botonera fija en la parte inferior de la carta */
     .letter-navigation {
         position: absolute !important;
         bottom: 15px !important;
